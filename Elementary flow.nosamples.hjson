@@ -54,6 +54,11 @@
               source: step_5
               target: step_6
             }
+            {
+              id: step_6:step_7
+              source: step_6
+              target: step_7
+            }
           ]
           nodes:
           [
@@ -263,6 +268,38 @@
                   '''
               }
               id: step_6
+              name: ""
+              sample:
+              {
+                method: execute
+                result:
+                {
+                  body: {}
+                }
+              }
+            }
+            {
+              component:
+              {
+                repo_name: code
+                team_name: elasticio
+                title: Node.js Code
+                version:
+                {
+                  date: 1638175214564
+                  version_number: 1.2.6
+                }
+              }
+              description: ""
+              fields:
+              {
+                code:
+                  '''
+                  async function run(msg, cfg, snapshot) {
+                  }
+                  '''
+              }
+              id: step_7
               name: ""
               sample:
               {
