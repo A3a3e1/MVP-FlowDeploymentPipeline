@@ -1,1 +1,12 @@
-{}
+{
+  body:
+  {
+    data:
+    {
+      attributes:
+      {
+        name: some Name
+      }
+    }
+  }
+}
