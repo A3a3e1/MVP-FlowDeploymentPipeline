@@ -176,7 +176,7 @@
                 objectType: companies
               }
               id: step_4
-              name: ""
+              name: 3. Extract data
               sample:
               {
                 method: lookupObjects
