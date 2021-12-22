@@ -1,0 +1,287 @@
+{
+  body:
+  {
+    data:
+    {
+      attributes:
+      {
+        default_mapper_type: jsonata
+        description: null
+        graph:
+        {
+          edges:
+          [
+            {
+              config:
+              {
+                condition: null
+                mapper:
+                {
+                  query: '''"select 1"'''
+                }
+                mapper_type: jsonata
+              }
+              id: mapper:step_1:step_3
+              source: step_1
+              target: step_3
+            }
+            {
+              config:
+              {
+                condition: null
+                mapper:
+                {
+                  pageNumber: "1"
+                  pageSize: "10"
+                }
+                mapper_type: jsonata
+              }
+              id: mapper:step_3:step_4
+              source: step_3
+              target: step_4
+            }
+            {
+              id: step_4:step_5
+              source: step_4
+              target: step_5
+            }
+            {
+              config:
+              {
+                condition: "true"
+              }
+              id: step_5:step_6
+              source: step_5
+              target: step_6
+            }
+          ]
+          nodes:
+          [
+            {
+              component:
+              {
+                repo_name: simple-trigger-component
+                team_name: elasticio
+                title: Simple trigger
+                version:
+                {
+                  date: 1638531044974
+                  version_number: 1.1.5
+                }
+              }
+              description: ""
+              first: true
+              id: step_1
+              name: ""
+              sample:
+              {
+                method: timer
+                result:
+                {
+                  body:
+                  {
+                    fireTime: 3633-12-10T15:58:35.349Z
+                    lastPoll: 2434-06-02T02:37:20.310Z
+                  }
+                }
+              }
+            }
+            {
+              component:
+              {
+                repo_name: jdbc
+                team_name: elasticio
+                title: Database
+                version:
+                {
+                  date: 1638530583258
+                  version_number: 2.5.1
+                }
+              }
+              credential: MySQL
+              description: ""
+              id: step_3
+              name: ""
+              sample:
+              {
+                method: customQuery
+                result:
+                {
+                  attachments: {}
+                  body:
+                  {
+                    result:
+                    [
+                      {
+                        1: 1
+                      }
+                    ]
+                  }
+                  headers: {}
+                  id: 1c006b22-55d1-467e-845b-c4fbcf840fe3
+                  passthrough:
+                  {
+                    "mapper:step_1:step_3":
+                    {
+                      body:
+                      {
+                        query: select 1
+                      }
+                      headers: {}
+                    }
+                    step_1:
+                    {
+                      body:
+                      {
+                        fireTime: 3633-12-10T15:58:35.349Z
+                        lastPoll: 2434-06-02T02:37:20.310Z
+                      }
+                    }
+                    step_3:
+                    {
+                      attachments: {}
+                      body:
+                      {
+                        result:
+                        [
+                          {
+                            1: 1
+                          }
+                        ]
+                      }
+                      headers: {}
+                      id: 1c006b22-55d1-467e-845b-c4fbcf840fe3
+                    }
+                  }
+                  stepId: step_3
+                }
+              }
+            }
+            {
+              component:
+              {
+                repo_name: hubspot
+                team_name: elasticio
+                title: Hubspot
+                version:
+                {
+                  date: 1639487330957
+                  version_number: 1.4.0
+                }
+              }
+              description: ""
+              fields:
+              {
+                emitBehaviour: fetchPage
+                objectType: companies
+              }
+              id: step_4
+              name: 3. Extract data
+              sample:
+              {
+                method: lookupObjects
+                result:
+                {
+                  body:
+                  {
+                    results:
+                    [
+                      {
+                        archived: false
+                        createdAt: 2021-10-20T19:06:10.884Z
+                        id: "4907370722"
+                        properties:
+                        {
+                          about_us: UPDATED
+                        }
+                        updatedAt: 2021-10-20T19:07:13.374Z
+                      }
+                      {
+                        archived: false
+                        createdAt: 2021-10-20T19:09:09.852Z
+                        id: "4907370997"
+                        properties:
+                        {
+                          about_us: inserted
+                        }
+                        updatedAt: 2021-10-20T19:10:13.749Z
+                      }
+                      {
+                        archived: false
+                        createdAt: 2021-10-20T19:09:10.319Z
+                        id: "4907370998"
+                        properties:
+                        {
+                          about_us: UPDATED
+                        }
+                        updatedAt: 2021-10-20T19:10:12.774Z
+                      }
+                    ]
+                    totalCountOfMatchingResults: 4328
+                  }
+                }
+              }
+              secret: My New Hubspot Credential
+            }
+            {
+              component:
+              {
+                repo_name: router
+                team_name: elasticio
+                title: Content-Based Router
+                version:
+                {
+                  date: 1638175365748
+                  version_number: 0.0.13
+                }
+              }
+              description: ""
+              id: step_5
+              name: ""
+            }
+            {
+              component:
+              {
+                repo_name: code
+                team_name: elasticio
+                title: Node.js Code
+                version:
+                {
+                  date: 1638175214564
+                  version_number: 1.2.6
+                }
+              }
+              description: ""
+              fields:
+              {
+                code:
+                  '''
+                  // Please note only Node.js code is supported here
+                  async function run(msg, cfg, snapshot) {
+                  	this.logger.info('Execution finished');
+                  }
+                  '''
+              }
+              id: step_6
+              name: ""
+              sample:
+              {
+                method: execute
+                result:
+                {
+                  body: {}
+                }
+              }
+            }
+          ]
+        }
+        name: Elementary flow
+        nodes_config: {}
+        stats_enabled: true
+        type: ordinary
+      }
+      relationships: {}
+      type: flow
+    }
+  }
+}

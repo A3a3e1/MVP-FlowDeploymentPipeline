@@ -1,0 +1,169 @@
+{
+  body:
+  {
+    data:
+    {
+      attributes:
+      {
+        default_mapper_type: jsonata
+        description: null
+        graph:
+        {
+          edges:
+          [
+            {
+              config:
+              {
+                condition: null
+                mapper:
+                {
+                  query: '''"select 1"'''
+                }
+                mapper_type: jsonata
+              }
+              id: mapper:step_1:step_3
+              source: step_1
+              target: step_3
+            }
+            {
+              config:
+              {
+                condition: null
+                mapper:
+                {
+                  pageNumber: "1"
+                  pageSize: "10"
+                }
+                mapper_type: jsonata
+              }
+              id: mapper:step_3:step_4
+              source: step_3
+              target: step_4
+            }
+            {
+              id: step_4:step_5
+              source: step_4
+              target: step_5
+            }
+            {
+              config:
+              {
+                condition: "true"
+              }
+              id: step_5:step_6
+              source: step_5
+              target: step_6
+            }
+          ]
+          nodes:
+          [
+            {
+              component:
+              {
+                repo_name: simple-trigger-component
+                team_name: elasticio
+                title: Simple trigger
+                version:
+                {
+                  date: 1638531044974
+                  version_number: 1.1.5
+                }
+              }
+              description: ""
+              first: true
+              id: step_1
+              name: ""
+            }
+            {
+              component:
+              {
+                repo_name: jdbc
+                team_name: elasticio
+                title: Database
+                version:
+                {
+                  date: 1638530583258
+                  version_number: 2.5.1
+                }
+              }
+              credential: MySQL
+              description: ""
+              id: step_3
+              name: ""
+            }
+            {
+              component:
+              {
+                repo_name: hubspot
+                team_name: elasticio
+                title: Hubspot
+                version:
+                {
+                  date: 1639487330957
+                  version_number: 1.4.0
+                }
+              }
+              description: ""
+              fields:
+              {
+                emitBehaviour: fetchPage
+                objectType: companies
+              }
+              id: step_4
+              name: 3. Extract data
+              secret: My New Hubspot Credential
+            }
+            {
+              component:
+              {
+                repo_name: router
+                team_name: elasticio
+                title: Content-Based Router
+                version:
+                {
+                  date: 1638175365748
+                  version_number: 0.0.13
+                }
+              }
+              description: ""
+              id: step_5
+              name: ""
+            }
+            {
+              component:
+              {
+                repo_name: code
+                team_name: elasticio
+                title: Node.js Code
+                version:
+                {
+                  date: 1638175214564
+                  version_number: 1.2.6
+                }
+              }
+              description: ""
+              fields:
+              {
+                code:
+                  '''
+                  // Please note only Node.js code is supported here
+                  async function run(msg, cfg, snapshot) {
+                  	this.logger.info('Execution finished');
+                  }
+                  '''
+              }
+              id: step_6
+              name: ""
+            }
+          ]
+        }
+        name: Elementary flow
+        nodes_config: {}
+        stats_enabled: true
+        type: ordinary
+      }
+      relationships: {}
+      type: flow
+    }
+  }
+}
