@@ -77,6 +77,7 @@
           nodes:
           [
             {
+              command: timer
               component:
               {
                 repo_name: simple-trigger-component
@@ -94,6 +95,7 @@
               name: ""
             }
             {
+              command: customQuery
               component:
               {
                 repo_name: jdbc
@@ -111,6 +113,7 @@
               name: 2. qwerty
             }
             {
+              command: lookupObjects
               component:
               {
                 repo_name: hubspot
@@ -133,6 +136,7 @@
               secret: My New Hubspot Credential
             }
             {
+              command: route
               component:
               {
                 repo_name: router
@@ -149,6 +153,7 @@
               name: ""
             }
             {
+              command: execute
               component:
               {
                 repo_name: code
@@ -175,6 +180,7 @@
               name: ""
             }
             {
+              command: execute
               component:
               {
                 repo_name: code
@@ -199,6 +205,7 @@
               name: ""
             }
             {
+              command: pub
               component:
               {
                 repo_name: pub-sub
