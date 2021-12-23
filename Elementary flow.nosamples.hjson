@@ -59,6 +59,20 @@
               source: step_6
               target: step_7
             }
+            {
+              config:
+              {
+                condition: null
+                mapper:
+                {
+                  a: '''"spartaaaaa"'''
+                }
+                mapper_type: jsonata
+              }
+              id: mapper:step_7:step_8
+              source: step_7
+              target: step_8
+            }
           ]
           nodes:
           [
@@ -182,6 +196,40 @@
                   '''
               }
               id: step_7
+              name: ""
+            }
+            {
+              component:
+              {
+                repo_name: pub-sub
+                team_name: elasticio
+                title: Pub-Sub
+                version:
+                {
+                  date: 1638532072248
+                  version_number: 1.0.7
+                }
+              }
+              description: ""
+              fields:
+              {
+                pubSub:
+                {
+                  name: topic-shtopic
+                  schema:
+                  {
+                    properties:
+                    {
+                      a:
+                      {
+                        type: number
+                      }
+                    }
+                    type: object
+                  }
+                }
+              }
+              id: step_8
               name: ""
             }
           ]
