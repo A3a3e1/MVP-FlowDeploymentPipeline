@@ -65,7 +65,7 @@
                 condition: null
                 mapper:
                 {
-                  a: '''"spartaaaaa"'''
+                  value: '''"asd 123"'''
                 }
                 mapper_type: jsonata
               }
@@ -205,37 +205,19 @@
               name: ""
             }
             {
-              command: pub
+              command: encodeBase64
               component:
               {
-                repo_name: pub-sub
+                repo_name: utility-component
                 team_name: elasticio
-                title: Pub-Sub
+                title: Utility Component
                 version:
                 {
-                  date: 1638532072248
-                  version_number: 1.0.7
+                  date: 1627307585687
+                  version_number: 1.3.0
                 }
               }
               description: ""
-              fields:
-              {
-                pubSub:
-                {
-                  name: topic-shtopic
-                  schema:
-                  {
-                    properties:
-                    {
-                      a:
-                      {
-                        type: number
-                      }
-                    }
-                    type: object
-                  }
-                }
-              }
               id: step_8
               name: ""
             }
