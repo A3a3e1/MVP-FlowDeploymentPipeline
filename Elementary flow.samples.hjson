@@ -79,7 +79,7 @@
                 condition: null
                 mapper:
                 {
-                  timesToConvert: "[$now()]"
+                  timesToConvert: $getPassthrough()."step_1".body.fireTime
                 }
                 mapper_type: jsonata
               }
@@ -259,6 +259,113 @@
                       }
                     ]
                     totalCountOfMatchingResults: 4328
+                  }
+                  passthrough:
+                  {
+                    step_1:
+                    {
+                      body:
+                      {
+                        fireTime: 3633-12-10T15:58:35.349Z
+                        lastPoll: 2434-06-02T02:37:20.310Z
+                      }
+                    }
+                    step_3:
+                    {
+                      attachments: {}
+                      body:
+                      {
+                        result:
+                        [
+                          {
+                            1: 1
+                          }
+                        ]
+                      }
+                      headers: {}
+                      id: 1c006b22-55d1-467e-845b-c4fbcf840fe3
+                      stepId: step_3
+                    }
+                    step_4:
+                    {
+                      body:
+                      {
+                        results:
+                        [
+                          {
+                            archived: false
+                            createdAt: 2021-10-20T19:06:10.884Z
+                            id: "4907370722"
+                            properties:
+                            {
+                              about_us: UPDATED
+                            }
+                            updatedAt: 2021-10-20T19:07:13.374Z
+                          }
+                          {
+                            archived: false
+                            createdAt: 2021-10-20T19:09:09.852Z
+                            id: "4907370997"
+                            properties:
+                            {
+                              about_us: inserted
+                            }
+                            updatedAt: 2021-10-20T19:10:13.749Z
+                          }
+                          {
+                            archived: false
+                            createdAt: 2021-10-20T19:09:10.319Z
+                            id: "4907370998"
+                            properties:
+                            {
+                              about_us: UPDATED
+                            }
+                            updatedAt: 2021-10-20T19:10:12.774Z
+                          }
+                        ]
+                        totalCountOfMatchingResults: 4328
+                      }
+                    }
+                    step_5:
+                    {
+                      body:
+                      {
+                        results:
+                        [
+                          {
+                            archived: false
+                            createdAt: 2021-10-20T19:06:10.884Z
+                            id: "4907370722"
+                            properties:
+                            {
+                              about_us: UPDATED
+                            }
+                            updatedAt: 2021-10-20T19:07:13.374Z
+                          }
+                          {
+                            archived: false
+                            createdAt: 2021-10-20T19:09:09.852Z
+                            id: "4907370997"
+                            properties:
+                            {
+                              about_us: inserted
+                            }
+                            updatedAt: 2021-10-20T19:10:13.749Z
+                          }
+                          {
+                            archived: false
+                            createdAt: 2021-10-20T19:09:10.319Z
+                            id: "4907370998"
+                            properties:
+                            {
+                              about_us: UPDATED
+                            }
+                            updatedAt: 2021-10-20T19:10:12.774Z
+                          }
+                        ]
+                        totalCountOfMatchingResults: 4328
+                      }
+                    }
                   }
                 }
               }

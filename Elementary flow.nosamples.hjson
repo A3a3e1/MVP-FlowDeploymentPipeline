@@ -79,7 +79,7 @@
                 condition: null
                 mapper:
                 {
-                  timesToConvert: "[$now()]"
+                  timesToConvert: $getPassthrough()."step_1".body.fireTime
                 }
                 mapper_type: jsonata
               }
