@@ -172,7 +172,11 @@
                 repo_name: simple-trigger-component
                 team_name: elasticio
                 title: Simple trigger
-                version: {}
+                version:
+                {
+                  date: 1638531044974
+                  version_number: 1.1.5
+                }
               }
               description: ""
               first: true
@@ -186,7 +190,11 @@
                 repo_name: ipaas
                 team_name: mots
                 title: iPaas Core
-                version: {}
+                version:
+                {
+                  date: 1638873185550
+                  version_number: 1.1.0
+                }
               }
               credential: stanislav.fomenko@elastic.io + ApiKEY + URL
               description: ""
@@ -205,7 +213,11 @@
                 repo_name: ipaas
                 team_name: mots
                 title: iPaas Core
-                version: {}
+                version:
+                {
+                  date: 1638873185550
+                  version_number: 1.1.0
+                }
               }
               credential: stanislav.fomenko@elastic.io + ApiKEY + URL
               description: ER: data sample ID included, sample is not included
@@ -224,7 +236,11 @@
                 repo_name: ipaas
                 team_name: mots
                 title: iPaas Core
-                version: {}
+                version:
+                {
+                  date: 1638873185550
+                  version_number: 1.1.0
+                }
               }
               credential: stanislav.fomenko@elastic.io + ApiKEY + URL
               description: Default: false
@@ -243,7 +259,11 @@
                 repo_name: ipaas
                 team_name: mots
                 title: iPaas Core
-                version: {}
+                version:
+                {
+                  date: 1638873185550
+                  version_number: 1.1.0
+                }
               }
               credential: stanislav.fomenko@elastic.io + ApiKEY + URL
               description: Remove Non Writeable Properties: TRUE
@@ -262,7 +282,11 @@
                 repo_name: ipaas
                 team_name: mots
                 title: iPaas Core
-                version: {}
+                version:
+                {
+                  date: 1638873185550
+                  version_number: 1.1.0
+                }
               }
               credential: stanislav.fomenko@elastic.io + ApiKEY + URL
               description: removeNonWritableProperties: false
@@ -281,7 +305,11 @@
                 repo_name: ipaas
                 team_name: mots
                 title: iPaas Core
-                version: {}
+                version:
+                {
+                  date: 1638873185550
+                  version_number: 1.1.0
+                }
               }
               credential: stanislav.fomenko@elastic.io + ApiKEY + URL
               description: ER: removeNonWritableProperties: default, removeNonWritablePropertie are not deleted
@@ -300,7 +328,11 @@
                 repo_name: ipaas
                 team_name: mots
                 title: iPaas Core
-                version: {}
+                version:
+                {
+                  date: 1638873185550
+                  version_number: 1.1.0
+                }
               }
               credential: stanislav.fomenko@elastic.io + ApiKEY + URL
               description: ""
@@ -319,7 +351,11 @@
                 repo_name: ipaas
                 team_name: mots
                 title: iPaas Core
-                version: {}
+                version:
+                {
+                  date: 1638873185550
+                  version_number: 1.1.0
+                }
               }
               credential: stanislav.fomenko@elastic.io + ApiKEY + URL
               description: ER: error thrown Error! Object with criteria: {"uniqueCriteria":"platformInternalId","value":{"flowId":"5ef34ace2492120011cbd16a"}} not found. Empty result is not allowed.
@@ -338,7 +374,11 @@
                 repo_name: ipaas
                 team_name: mots
                 title: iPaas Core
-                version: {}
+                version:
+                {
+                  date: 1638873185550
+                  version_number: 1.1.0
+                }
               }
               credential: stanislav.fomenko@elastic.io + ApiKEY + URL
               description:
@@ -361,7 +401,11 @@
                 repo_name: ipaas
                 team_name: mots
                 title: iPaas Core
-                version: {}
+                version:
+                {
+                  date: 1638873185550
+                  version_number: 1.1.0
+                }
               }
               credential: My New iPaas Core Credential EMPTY fields
               description: ""
