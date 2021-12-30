@@ -1,0 +1,215 @@
+{
+  body:
+  {
+    data:
+    {
+      attributes:
+      {
+        default_mapper_type: jsonata
+        description: null
+        graph:
+        {
+          edges:
+          [
+            {
+              id: step_1:step_2
+              source: step_1
+              target: step_2
+            }
+            {
+              config:
+              {
+                condition: null
+                mapper:
+                {
+                  ff: "76"
+                }
+                mapper_type: jsonata
+              }
+              id: mapper:step_2:step_3
+              source: step_2
+              target: step_3
+            }
+            {
+              config:
+              {
+                condition: null
+                mapper:
+                {
+                  ff: "78"
+                }
+                mapper_type: jsonata
+              }
+              id: mapper:step_3:step_4
+              source: step_3
+              target: step_4
+            }
+            {
+              config:
+              {
+                condition: null
+                mapper:
+                {
+                  limit: "1"
+                  sTerm_1:
+                  {
+                    fieldName: '''"id"'''
+                    fieldValue: '''"gg"'''
+                  }
+                }
+                mapper_type: jsonata
+              }
+              id: mapper:step_4:step_5
+              source: step_4
+              target: step_5
+            }
+          ]
+          nodes:
+          [
+            {
+              command: timer
+              component:
+              {
+                repo_name: simple-trigger
+                team_name: core
+                title: Simple trigger
+                version:
+                {
+                  date: 1638538695831
+                  version_number: 1.1.5
+                }
+              }
+              description: ""
+              first: true
+              id: step_1
+              name: ""
+            }
+            {
+              command: lookupObjects
+              component:
+              {
+                repo_name: hubspot
+                team_name: Illya
+                title: Hubspot
+                version:
+                {
+                  date: 1640049232908
+                  version_number: 1.5.0
+                }
+              }
+              description: ""
+              fields:
+              {
+                emitBehaviour: fetchAll
+                objectType: contacts
+              }
+              id: step_2
+              name: ""
+              secret: My New Hubspot Credential 1
+            }
+            {
+              command: pub
+              component:
+              {
+                repo_name: pub-sub
+                team_name: core
+                title: Pub-Sub
+                version:
+                {
+                  date: 1638538336902
+                  version_number: 1.0.7
+                }
+              }
+              description: ""
+              fields:
+              {
+                pubSub:
+                {
+                  name: t2
+                  schema:
+                  {
+                    properties:
+                    {
+                      ff:
+                      {
+                        type: number
+                      }
+                    }
+                    type: object
+                  }
+                }
+              }
+              id: step_3
+              name: ""
+            }
+            {
+              command: pub
+              component:
+              {
+                repo_name: pub-sub
+                team_name: core
+                title: Pub-Sub
+                version:
+                {
+                  date: 1638538336902
+                  version_number: 1.0.7
+                }
+              }
+              description: ""
+              fields:
+              {
+                pubSub:
+                {
+                  name: t2
+                  schema:
+                  {
+                    properties:
+                    {
+                      ff:
+                      {
+                        type: number
+                      }
+                    }
+                    type: object
+                  }
+                }
+              }
+              id: step_4
+              name: ""
+            }
+            {
+              command: lookupObjects
+              component:
+              {
+                repo_name: bigcommerce
+                team_name: Illya
+                title: BigCommerce
+                version:
+                {
+                  date: 1640877788699
+                  version_number: "1"
+                }
+              }
+              credential: My New BigCommerce Credential 2
+              description: ""
+              fields:
+              {
+                objectType: category
+                outputMethod: emitAll
+                termNumber: "1"
+              }
+              id: step_5
+              name: ""
+            }
+          ]
+        }
+        name: try1
+        nodes_config: {}
+        stats_enabled: true
+        type: ordinary
+      }
+      relationships: {}
+      type: flow
+    }
+  }
+}
