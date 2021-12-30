@@ -1,0 +1,479 @@
+{
+  body:
+  {
+    data:
+    {
+      attributes:
+      {
+        default_mapper_type: jsonata
+        description:
+          '''
+          Object: FLOW | 1. Fields tested: Include Data Samples, removeNonWritableProperties
+          2. Get flow draft
+          3. Get flow by ID, different tenant (app.elastic.io)
+          '''
+        graph:
+        {
+          edges:
+          [
+            {
+              config:
+              {
+                condition: null
+                mapper:
+                {
+                  flowId: '''"61c4e4719aa4230012081543"'''
+                }
+                mapper_type: jsonata
+              }
+              id: mapper:step_1:step_19
+              source: step_1
+              target: step_19
+            }
+            {
+              config:
+              {
+                condition: null
+                mapper:
+                {
+                  flowId: '''"61c4e4719aa4230012081543"'''
+                  includeDataSamples: "true"
+                }
+                mapper_type: jsonata
+              }
+              id: mapper:step_1:step_2
+              source: step_1
+              target: step_2
+            }
+            {
+              config:
+              {
+                condition: null
+                mapper:
+                {
+                  flowId: '''"61c4e4719aa4230012081543"'''
+                  includeDataSamples: "false"
+                }
+                mapper_type: jsonata
+              }
+              id: mapper:step_1:step_3
+              source: step_1
+              target: step_3
+            }
+            {
+              config:
+              {
+                condition: null
+                mapper:
+                {
+                  flowId: '''"61c4e4719aa4230012081543"'''
+                }
+                mapper_type: jsonata
+              }
+              id: mapper:step_1:step_4
+              source: step_1
+              target: step_4
+            }
+            {
+              config:
+              {
+                condition: null
+                mapper:
+                {
+                  flowId: '''"61c4e4719aa4230012081543"'''
+                  removeNonWritableProperties: "true"
+                }
+                mapper_type: jsonata
+              }
+              id: mapper:step_1:step_5
+              source: step_1
+              target: step_5
+            }
+            {
+              config:
+              {
+                condition: null
+                mapper:
+                {
+                  flowId: '''"61c4e4719aa4230012081543"'''
+                  removeNonWritableProperties: "false"
+                }
+                mapper_type: jsonata
+              }
+              id: mapper:step_1:step_6
+              source: step_1
+              target: step_6
+            }
+            {
+              config:
+              {
+                condition: null
+                mapper:
+                {
+                  flowId: '''"61c4e4719aa4230012081543"'''
+                }
+                mapper_type: jsonata
+              }
+              id: mapper:step_1:step_7
+              source: step_1
+              target: step_7
+            }
+            {
+              config:
+              {
+                condition: null
+                mapper:
+                {
+                  flowId: '''"61c4e47f9aa4230012081798"'''
+                }
+                mapper_type: jsonata
+              }
+              id: mapper:step_1:step_8
+              source: step_1
+              target: step_8
+            }
+            {
+              config:
+              {
+                condition: null
+                mapper:
+                {
+                  flowId: '''"5f0c77339ada9f0011152425"'''
+                }
+                mapper_type: jsonata
+              }
+              id: mapper:step_1:step_9
+              source: step_1
+              target: step_9
+            }
+            {
+              config:
+              {
+                condition: null
+                mapper:
+                  '''
+                  {
+                    "flowId": "5ef34ace2492120000000000"
+                  }
+                  '''
+                mapper_type: jsonata
+              }
+              id: mapper:step_1:step_10
+              source: step_1
+              target: step_10
+            }
+          ]
+          nodes:
+          [
+            {
+              command: timer
+              component:
+              {
+                repo_name: simple-trigger-component
+                team_name: elasticio
+                title: Simple trigger
+                version: {}
+              }
+              description: ""
+              first: true
+              id: step_1
+              name: ""
+              sample:
+              {
+                method: timer
+                result:
+                {
+                  body:
+                  {
+                    fireTime: 3935-07-09T21:51:30.627Z
+                    lastPoll: 2025-03-25T05:26:10.778Z
+                  }
+                }
+              }
+            }
+            {
+              command: lookupObject
+              component:
+              {
+                repo_name: ipaas
+                team_name: mots
+                title: iPaas Core
+                version: {}
+              }
+              credential: stanislav.fomenko@elastic.io + ApiKEY + URL
+              description: ""
+              fields:
+              {
+                objectType: flows
+                uniqueCriteria: platformInternalId
+              }
+              id: step_2
+              name: Include Data Samples: true
+              sample:
+              {
+                method: lookupObject
+                result:
+                {
+                  body: {}
+                }
+              }
+            }
+            {
+              command: lookupObject
+              component:
+              {
+                repo_name: ipaas
+                team_name: mots
+                title: iPaas Core
+                version: {}
+              }
+              credential: stanislav.fomenko@elastic.io + ApiKEY + URL
+              description: ER: data sample ID included, sample is not included
+              fields:
+              {
+                objectType: flows
+                uniqueCriteria: platformInternalId
+              }
+              id: step_3
+              name: "includeDataSamples:false  - "
+              sample:
+              {
+                method: lookupObject
+                result:
+                {
+                  body: {}
+                }
+              }
+            }
+            {
+              command: lookupObject
+              component:
+              {
+                repo_name: ipaas
+                team_name: mots
+                title: iPaas Core
+                version: {}
+              }
+              credential: stanislav.fomenko@elastic.io + ApiKEY + URL
+              description: Default: false
+              fields:
+              {
+                objectType: flows
+                uniqueCriteria: platformInternalId
+              }
+              id: step_4
+              name: Include Data Samples: default
+              sample:
+              {
+                method: lookupObject
+                result:
+                {
+                  body: {}
+                }
+              }
+            }
+            {
+              command: lookupObject
+              component:
+              {
+                repo_name: ipaas
+                team_name: mots
+                title: iPaas Core
+                version: {}
+              }
+              credential: stanislav.fomenko@elastic.io + ApiKEY + URL
+              description: Remove Non Writeable Properties: TRUE
+              fields:
+              {
+                objectType: flows
+                uniqueCriteria: platformInternalId
+              }
+              id: step_5
+              name: Remove... Properties: TRUE
+              sample:
+              {
+                method: lookupObject
+                result:
+                {
+                  body: {}
+                }
+              }
+            }
+            {
+              command: lookupObject
+              component:
+              {
+                repo_name: ipaas
+                team_name: mots
+                title: iPaas Core
+                version: {}
+              }
+              credential: stanislav.fomenko@elastic.io + ApiKEY + URL
+              description: removeNonWritableProperties: false
+              fields:
+              {
+                objectType: flows
+                uniqueCriteria: platformInternalId
+              }
+              id: step_6
+              name: remove...Properties: false
+              sample:
+              {
+                method: lookupObject
+                result:
+                {
+                  body: {}
+                }
+              }
+            }
+            {
+              command: lookupObject
+              component:
+              {
+                repo_name: ipaas
+                team_name: mots
+                title: iPaas Core
+                version: {}
+              }
+              credential: stanislav.fomenko@elastic.io + ApiKEY + URL
+              description: ER: removeNonWritableProperties: default, removeNonWritablePropertie are not deleted
+              fields:
+              {
+                objectType: flows
+                uniqueCriteria: platformInternalId
+              }
+              id: step_7
+              name: remove...Properties: default
+              sample:
+              {
+                method: lookupObject
+                result:
+                {
+                  body: {}
+                }
+              }
+            }
+            {
+              command: lookupObject
+              component:
+              {
+                repo_name: ipaas
+                team_name: mots
+                title: iPaas Core
+                version: {}
+              }
+              credential: stanislav.fomenko@elastic.io + ApiKEY + URL
+              description: ""
+              fields:
+              {
+                objectType: flows
+                uniqueCriteria: platformInternalId
+              }
+              id: step_8
+              name: 8. Get flow draft
+              sample:
+              {
+                method: lookupObject
+                result:
+                {
+                  body: {}
+                }
+              }
+            }
+            {
+              command: lookupObject
+              component:
+              {
+                repo_name: ipaas
+                team_name: mots
+                title: iPaas Core
+                version: {}
+              }
+              credential: stanislav.fomenko@elastic.io + ApiKEY + URL
+              description: ER: error thrown Error! Object with criteria: {"uniqueCriteria":"platformInternalId","value":{"flowId":"5ef34ace2492120011cbd16a"}} not found. Empty result is not allowed.
+              fields:
+              {
+                objectType: flows
+                uniqueCriteria: platformInternalId
+              }
+              id: step_9
+              name: error: try to Get valid flow by ID, different tenant (ninja)
+              sample:
+              {
+                method: lookupObject
+                result:
+                {
+                  body: {}
+                }
+              }
+            }
+            {
+              command: lookupObject
+              component:
+              {
+                repo_name: ipaas
+                team_name: mots
+                title: iPaas Core
+                version: {}
+              }
+              credential: stanislav.fomenko@elastic.io + ApiKEY + URL
+              description:
+                '''
+                Try to get flow from app.elastic.io
+                ER: Error! Object with criteria: {"uniqueCriteria":"platformInternalId","value":{"flowId":"5ef34ace2492120011cbd16a"}} not found. Empty result is not allowed.
+                '''
+              fields:
+              {
+                objectType: flows
+                uniqueCriteria: platformInternalId
+              }
+              id: step_10
+              name: 10. ER error: flow not found
+              sample:
+              {
+                method: lookupObject
+                result:
+                {
+                  body: {}
+                }
+              }
+            }
+            {
+              command: lookupObject
+              component:
+              {
+                repo_name: ipaas
+                team_name: mots
+                title: iPaas Core
+                version: {}
+              }
+              credential: My New iPaas Core Credential EMPTY fields
+              description: ""
+              fields:
+              {
+                objectType: flows
+                uniqueCriteria: platformInternalId
+              }
+              id: step_19
+              name: 19. Get flow with empty creds
+              sample:
+              {
+                method: lookupObject
+                result:
+                {
+                  body: {}
+                }
+              }
+            }
+          ]
+        }
+        name: Motsak copy #2VAL/INVAL: ipaas-comp:lookupObject
+        nodes_config: {}
+        stats_enabled: true
+        type: ordinary
+      }
+      relationships: {}
+      type: flow
+    }
+  }
+}
